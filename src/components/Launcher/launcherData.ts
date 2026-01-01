@@ -4,7 +4,7 @@ export interface AppItem {
     icon: string;
 }
 
-export const launcerApps: AppItem[] = [
+export const launcherApps: AppItem[] = [
     { id: "about", name: "About Me", icon: "👤"},
     { id: "skills", name: "Skills", icon: "💻"},
     { id: "projects", name: "Projects", icon: "🗂️"},
