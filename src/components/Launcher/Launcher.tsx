@@ -1,5 +1,4 @@
 import { launcherApps} from "./launcherData";
-
 export default function Launcher() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 p-10">
