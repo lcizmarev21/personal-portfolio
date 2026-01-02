@@ -1,6 +1,6 @@
 import  { useEffect } from "react";
 import type { RefObject } from "react";
-import {setupWaves, drawWaves} from "./useWaves";
+import {setupWaves, drawWaves, drawGlowWave} from "./useWaves";
 import {setupParticles, drawParticles} from "./useParticles";
 
 export function useBackground( canvasRef: RefObject<HTMLCanvasElement | null>) {
@@ -16,6 +16,8 @@ export function useBackground( canvasRef: RefObject<HTMLCanvasElement | null>) {
         let animationID: number;
         let t = 0;
 
+        const waveColor = "rgba(120,200,255,1)";
+
         function resize(canvas: HTMLCanvasElement) {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -24,15 +26,21 @@ export function useBackground( canvasRef: RefObject<HTMLCanvasElement | null>) {
         resize(canvas);
         window.addEventListener("resize", () => resize(canvas));
 
-        const waves = setupWaves(canvas);
+        const waves = setupWaves();
         const particles = setupParticles(canvas);
 
         const animate = ()  =>{
 
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#1e293b";
 
-            drawWaves( waves , t, ctx);
-            drawParticles(particles, ctx);
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            for(const layer of waves) {
+                drawWaves(ctx, layer, t, waveColor);
+                drawGlowWave(ctx, layer, t, waveColor);
+            }
+
+            drawParticles( particles, ctx);
 
             t += 0.02;
             animationID = requestAnimationFrame(animate);
