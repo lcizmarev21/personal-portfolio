@@ -1,14 +1,16 @@
 import Launcher from './components/Launcher/Launcher'
+import Background from './components/Background/Background';
 
 
 function App() {
   return (
-    <div>
-      
-
-      <div className="min-h-screen flex items-end pb-25 justify-center z-10">
-          <Launcher />
+    <div className="relative min-h-screen bg-black text-white">
+      <Background />
+  
+      <div className="flex min-h-screen items-end  justify-center ">
+        <Launcher />
       </div>
+
     </div>
   );
 }
