@@ -4,13 +4,13 @@ import Background from './components/Background/Background';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-black text-white">
+    <div className="relative w-screen h-screen overflow-hidden" >
       <Background />
-  
-      <div className="flex min-h-screen items-end  justify-center ">
+
+      <div className="absolute inset-0 flex items-end justify-center pb-25">
         <Launcher />
       </div>
-
+      
     </div>
   );
 }

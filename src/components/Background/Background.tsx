@@ -1,24 +1,30 @@
 import {Canvas} from '@react-three/fiber';
-import { OrthographicCamera } from '@react-three/drei';
-import { Wave } from './Wave';
+import { SphereLight } from './Lightsource';
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import { Waves } from './Wave';
 
 export default function Background() {
     return (
         <Canvas 
-            className="fixed inset-0 -z-10 bg-red-500"
-            orthographic
-            dpr={[1,2]}
-            gl={{alpha: true, antialias: true}}
-        >
-            <OrthographicCamera
-                makeDefault
-                position={[0, 0, 1]}
-                zoom={1}
-            />
-
-            <Wave />
-
+            className="bg-slate-950"
+            camera={{position:[0,0,10], fov:75}}
             
+        >
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[0, 5, 5]} intensity={0.5} />
+
+            <SphereLight />
+
+
+            <Waves />
+
+            <EffectComposer>
+                <Bloom
+                    intensity={0.9}
+                    luminanceThreshold={0.2}  
+                    luminanceSmoothing={0.5} 
+                />
+            </EffectComposer>
         </Canvas>
     )
 }

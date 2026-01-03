@@ -1,49 +1,67 @@
-import { useFrame, useThree } from "@react-three/fiber";
-import * as THREE from "three";
-import { useRef } from "react";
+import { Line } from "@react-three/drei";
+import { useState, useMemo } from "react";
+import { useFrame } from "@react-three/fiber";
 
-export function Wave(){
-    const materialRef = useRef<THREE.ShaderMaterial>(null) ;
-    const {size} = useThree();
+interface WaveLayerProps {
+  y: number; // vertical offset
+  amplitude: number;
+  speed: number;
+  color?: string;
+  opacity?: number;
+  frequency?: number;
+}
 
-    useFrame(({clock}) => {
-            if (materialRef.current) {
-                materialRef.current.uniforms.time.value = clock.getElapsedTime();
-            }
-        });
-    
-        return (
-            <mesh>
-                <planeGeometry args={[2,2]} />
-                <shaderMaterial
-                    ref={materialRef}
-                    transparent
-                    uniforms={{
-                        time: {value: 0},
-                        resolution: {value: new THREE.Vector2(size.width, size.height)},
-                    }}
-                    vertexShader={`
-                       varying vec2 vUv;
-                          void main() {
-                                vUv = uv;
-                                gl_Position = vec4(position, 1.0);
-                          }
-                    `}
-                    fragmentShader={`
-                        precision highp float;
+ function WaveLayer({
+  y,
+  amplitude,
+  speed,
+  color = "#3b82f6",
+  opacity = 0.4,
+  frequency = 2,
+}: WaveLayerProps) {
+  const segments = 400;
+  const length = 100;
 
-                        uniform float time;
-                        varying vec2 vUv;
+  const basePoints = useMemo(
+    () =>
+      Array.from({ length: segments }, (_, i) => {
+        const x = (i / (segments - 1)) * length - length / 2;
+        return [x, 0, 0] as [number, number, number];
+      }),
+    []
+  );
 
-                        void main() {
-                            float wave = sin((vUv.x + time * 0.5) * 10.0) * 0.1;
-                            vec3 color = vec3(0.0, 0.5 + wave, 1.0);
-                            gl_FragColor = vec4(color, 0.5);
-                        }
-                    `}  
-                />
-            </mesh>
-        );
-    }
+  const [points, setPoints] = useState(basePoints);
 
+  useFrame(({ clock }) => {
+    const t = clock.getElapsedTime() * speed;
+    const newPoints = basePoints.map(([x, _unused, z]) => [
+      x,
+      Math.sin(x * frequency + t) * amplitude,
+      z,
+    ] as [number, number, number]);
+    setPoints(newPoints);
+  });
 
+  return (
+    <Line
+      points={points}
+      color={color}
+      lineWidth={2}
+      transparent
+      opacity={opacity}
+      position={[0, y, -4]}
+    />
+  );
+}
+
+export function Waves() {
+  return (
+    <>
+      <WaveLayer y={-0.5} amplitude={0.5} speed={1} opacity={0.5} color="#3b82f6" frequency={1.5} />
+      <WaveLayer y={-1} amplitude={0.3} speed={1.3} opacity={0.3} color="#60a5fa" frequency={1.8} />
+      <WaveLayer y={-1.5} amplitude={0.4} speed={0.8} opacity={0.4} color="#93c5fd" frequency={1.2} />
+      <WaveLayer y={-2} amplitude={0.2} speed={1.5} opacity={0.25} color="#bfdbfe" frequency={1.6} />
+    </>
+  );
+}
