@@ -1,17 +1,11 @@
-import Launcher from './components/Launcher/Launcher'
-import Background from './components/Background/Background';
-
+import Layout from './components/layout/Layout.tsx';
+import Hero from './features/home/Hero.tsx';
 
 function App() {
   return (
-    <div className="relative w-screen h-screen overflow-hidden" >
-      <Background />
-
-      <div className="absolute inset-0 flex items-end justify-center pb-25">
-        <Launcher />
-      </div>
-      
-    </div>
+    <Layout>
+      <Hero />
+    </Layout>
   );
 }
 
