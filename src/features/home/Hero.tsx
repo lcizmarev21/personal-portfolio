@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <section className="min-h-screen flex items-center px-8">
+        <section id="hero" className="min-h-screen flex items-center px-8">
             <div className="w-full flex flex-row justify-between items-center gap-6 p-30">
 
                 {/* Left side */}
@@ -15,6 +15,7 @@ export default function Hero() {
 
                 {/* Right side */}
                 <div className="flex-1 flex justify-end">
+
                     <div className="flex flex-col gap-6">
                         <div>
                             <p> Based in Croatia </p>
@@ -27,6 +28,7 @@ export default function Hero() {
                             </span>
                             <p> Available for work </p>
                         </div>
+
                     </div>
                     
                 </div>
