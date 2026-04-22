@@ -1,12 +1,14 @@
 import Layout from './components/layout/Layout.tsx';
 import Hero from './features/home/Hero.tsx';
 import Projects from './features/projects/Projects.tsx';
+import Skills from './features/skills/Skills.tsx';
 
 function App() {
   return (
     <Layout>
       <Hero />
       <Projects />
+      <Skills />
     </Layout>
   );
 }
