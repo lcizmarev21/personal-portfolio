@@ -20,7 +20,7 @@ export default function Projects() {
                     <div className="h-2 bg-[#D2D7D9] blur-md opacity-25 w-full"></div>
                 </div>
 
-                <div className="mt-24">
+                <div className="h-screen flex items-center justify-center">
                     <ProjectCard project={projects[0]} />
                 </div>
 

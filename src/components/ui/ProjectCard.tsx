@@ -2,7 +2,7 @@ import type {Project} from "../../types/project.ts"
 
 export default function ProjectCard({project}: {project: Project }) {
     return (
-        <div className="flex flex-row gap-48">
+        <div className="flex flex-row justify-content items-center gap-6 p-6 border rounded w-full h-auto">
 
             <div className="w-1/2">
                 <img  />
