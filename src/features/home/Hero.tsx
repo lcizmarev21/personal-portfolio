@@ -11,7 +11,7 @@ export default function Hero() {
                         clean and responsive web applications.
                     </h1>
 
-                    <button className="mt-10 opacity-45 font-thin"> More </button>
+                    <button className="mt-10 opacity-45 font-thin"> More ...</button>
                 </div>
 
 
@@ -21,7 +21,7 @@ export default function Hero() {
                     <div className="flex flex-col gap-6">
                         <div>
                             <p> Based in Croatia </p>
-                            <p className="font-thin"> Language : English / Croatian </p>
+                            <p className="font-thin"> English / Croatian </p>
                         </div>
 
                         <div className="flex items-center gap-2">
