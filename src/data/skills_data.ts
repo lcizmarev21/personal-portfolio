@@ -21,6 +21,10 @@ export const frontend: Skill[] = [
         name: 'HTML',
         icon: '/icons/html5.svg'
     },
+    {
+        name: 'JavaScript',
+        icon: '/icons/javascript.svg'
+    }
 ];
 
 export const backend: Skill[] = [
@@ -31,6 +35,10 @@ export const backend: Skill[] = [
     {
         name: 'TypeScript',
         icon: '/icons/typescript.svg'
+    },
+    {
+        name:'JavaScript',
+        icon: '/icons/javascript.svg'
     }
 ];
 
