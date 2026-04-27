@@ -45,7 +45,7 @@ export const tools: Skill[] = [
     },
     {
         name: 'VS Code',
-        icon: '/icons/vscode.svg'
+        icon: '/icons/visualstudio.svg'
     },
     {
         name: 'Vercel',
