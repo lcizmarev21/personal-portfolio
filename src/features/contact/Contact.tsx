@@ -19,7 +19,7 @@ export default function Contact() {
                     <div className="h-2 bg-[#D2D7D9] blur-md opacity-25 w-full"></div>
                 </div>
 
-                <div className=" mt-32 flex items-center justify-center gap-12">
+                <div className=" mt-32 flex items-center justify-center gap-12  ">
                     <ContactButton contact={{ href: "mailto:example@example.com", icon: "/icons/email.svg", label: "Email" }} />
                     <ContactButton contact={{ href: "https://linkedin.com/in/example", icon: "/icons/linkedin.svg", label: "LinkedIn" }} />
                     <ContactButton contact={{ href: "https://github.com/example", icon: "/icons/github.svg", label: "GitHub" }} />

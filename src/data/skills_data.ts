@@ -3,56 +3,56 @@ import type { Skill } from '../types/skills.ts';
 export const frontend: Skill[] = [
     {
         name: 'React',
-        icon: '/assets/skills/react.svg'
+        icon: '/icons/react.svg'
     },
     {
         name: 'TypeScript',
-        icon: '/assets/skills/typescript.svg'
+        icon: '/icons/typescript.svg'
     },
     {
         name: 'Tailwind CSS',
-        icon: '/assets/skills/tailwind.svg'
+        icon: '/icons/tailwindcss.svg'
     },
     {
         name: 'CSS',
-        icon: '/assets/skills/css.svg'
+        icon: '/icons/css.svg'
     },
     {
         name: 'HTML',
-        icon: '/assets/skills/html.svg'
+        icon: '/icons/html5.svg'
     },
 ];
 
 export const backend: Skill[] = [
     {
         name: 'Supabase',
-        icon: '/assets/skills/supabase.svg'
+        icon: '/icons/supabase.svg'
     },
     {
         name: 'TypeScript',
-        icon: '/assets/skills/typescript.svg'
+        icon: '/icons/typescript.svg'
     }
 ];
 
 export const tools: Skill[] = [
     {
         name: 'Git',
-        icon: '/assets/skills/git.svg'
+        icon: '/icons/git.svg'
     },
     {
         name: 'Figma',
-        icon: '/assets/skills/figma.svg'
+        icon: '/icons/figma.svg'
     },
     {
         name: 'VS Code',
-        icon: '/assets/skills/vscode.svg'
+        icon: '/icons/vscode.svg'
     },
     {
         name: 'Vercel',
-        icon: '/assets/skills/vercel.svg'
+        icon: '/icons/vercel.svg'
     },
     {
         name: 'Vite',
-        icon: '/assets/skills/vite.svg'
+        icon: '/icons/vite.svg'
     }
 ];
