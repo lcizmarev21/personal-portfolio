@@ -11,6 +11,9 @@ export default function Navbar() {
                 <li>
                     Skills
                 </li>
+                <li>
+                    Contact
+                </li>
             </ul>
         </nav>
     );

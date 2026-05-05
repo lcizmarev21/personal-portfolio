@@ -32,6 +32,7 @@ export default function Hero() {
                             <p> Available for work </p>
                         </div>
 
+                        <button className="font-semibold text-sm opacity-45 "> Download CV </button>
                     </div>
                     
                 </div>
