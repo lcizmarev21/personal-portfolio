@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     title: "Portfolio Website",
     description: "Modern portfolio built with React and Tailwind.",
-    image: "/project1.png",
+    image: "/project_images/cloud.jpg",
     tags: ["React", "TypeScript", "Tailwind"],
   },
   {
