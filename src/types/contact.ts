@@ -1,5 +1,5 @@
 export type Contact = {
-    href: string;
+    link: string;
     icon: string;
     label?: string;
 }

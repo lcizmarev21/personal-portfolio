@@ -5,7 +5,7 @@ export default function Projects() {
     return (
        <section
             id="projects"
-            className="min-h-screen py-20 scroll-mt-10"
+            className="min-h-screen scroll-mt-20"
         >
             <div className="w-full mx-auto px-24">
 

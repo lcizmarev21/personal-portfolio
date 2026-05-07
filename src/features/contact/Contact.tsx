@@ -20,9 +20,9 @@ export default function Contact() {
                 </div>
 
                 <div className=" mt-32 flex items-center justify-center gap-12  ">
-                    <ContactButton contact={{ href: "mailto:example@example.com", icon: "/icons/email.svg", label: "Email" }} />
-                    <ContactButton contact={{ href: "https://linkedin.com/in/example", icon: "/icons/linkedin.svg", label: "LinkedIn" }} />
-                    <ContactButton contact={{ href: "https://github.com/example", icon: "/icons/github.svg", label: "GitHub" }} />
+                    <ContactButton contact={{ link: "mailto:example@example.com", icon: "/icons/gmail.svg", label: "Email" }} />
+                    <ContactButton contact={{ link: "https://linkedin.com/in/example", icon: "/icons/linkedin.svg", label: "LinkedIn" }} />
+                    <ContactButton contact={{ link: "https://github.com/example", icon: "/icons/github.svg", label: "GitHub" }} />
                 </div>
 
                 
