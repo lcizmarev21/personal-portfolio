@@ -2,10 +2,10 @@ import type {Project} from "../../types/project.ts"
 
 export default function ProjectCard({project}: {project: Project }) {
     return (
-        <div className="flex flex-row justify-between items-center gap-6 p-6 border rounded w-full h-auto">
+        <div className="flex flex-row justify-between items-center p-6 border rounded h-screen w-screen">
 
-            <div className="w-1/2 items-start flex">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+            <div className="w-1/2 flex flex-col items-center ml-24">
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover " />
             </div>
 
             <div className="w-1/2 items-center flex flex-col">
