@@ -3,16 +3,16 @@ export default function Navbar() {
         <nav className="fixed top-0 left-0 w-full flex justify-end px-8 py-4 bg-[#0B0D0D] z-50">
             <ul className="flex flex-row gap-8">
                 <li>
-                    Home
+                    <a href="#home"> Home </a>
                 </li>
                 <li>
-                    Projects
+                    <a href="#projects"> Projects </a>
                 </li>
                 <li>
-                    Skills
+                    <a href="#skills"> Skills </a>
                 </li>
                 <li>
-                    Contact
+                    <a href="#contact"> Contact </a>
                 </li>
             </ul>
         </nav>

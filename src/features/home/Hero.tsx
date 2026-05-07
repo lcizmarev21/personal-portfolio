@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <section id="hero" className="min-h-screen flex items-center px-8">
+        <section id="home" className="min-h-screen flex items-center px-8 scroll-mt-20">
             <div className="w-full flex flex-row justify-between items-center gap-6">
 
                 {/* Left side */}

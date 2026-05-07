@@ -4,7 +4,7 @@ export default function Skills() {
     return (
        <section
             id="skills"
-            className="min-h-screen"
+            className="min-h-screen scroll-mt-20"
         >
             <div className="w-full mx-auto px-24">
 

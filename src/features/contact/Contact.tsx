@@ -4,7 +4,7 @@ export default function Contact() {
     return (
        <section
             id="contact"
-            className="min-h-screen"
+            className="min-h-screen scroll-mt-20"
         >
             <div className="w-full mx-auto px-24">
 
