@@ -1,11 +1,15 @@
-import react from "react";
+
+
 import {motion} from "framer-motion";
+import {useActiveSection} from "../../animations/hooks/useActiveSection";
 
 const links = ["home", "projects", "skills", "contact"];
 
 export default function Navbar() {
 
-    const [active, setActive] = react.useState("home");
+    
+
+    const active = useActiveSection(links);
 
     return (
         <nav className="fixed top-0 left-0 w-full flex justify-end px-8 py-4 bg-[#0B0D0D] z-50">
@@ -14,7 +18,6 @@ export default function Navbar() {
                     <li key={item} className="relative">
                         <a
                             href={`#${item}`}
-                            onClick={() => setActive(item)}
                             className={`opacity-75 hover:opacity-100 transition-opacity duration-300 ${
                                 active === item
                                 ? " font-bold opacity-100"
@@ -36,7 +39,6 @@ export default function Navbar() {
                                 }}
                             />
                         )}
-
                     </li>
                 ))}
             </ul>
