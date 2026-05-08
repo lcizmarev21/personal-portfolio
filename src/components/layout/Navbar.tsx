@@ -12,7 +12,7 @@ export default function Navbar() {
     const active = useActiveSection(links);
 
     return (
-        <nav className="fixed top-0 left-0 w-full flex justify-end px-8 py-4  z-50 bg-none">
+        <nav className="fixed top-0 left-0 w-full flex justify-end px-8 py-4  z-50 bg-none backdrop-blur-xs">
             <ul className="flex flex-row gap-12 text-lg relative"> 
                 {links.map((item) => (
                     <li key={item} className="relative">
