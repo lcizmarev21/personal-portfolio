@@ -1,3 +1,4 @@
+import Background from './Background';
 import Navbar from './Navbar';
 
 interface LayoutProps {
@@ -6,7 +7,8 @@ interface LayoutProps {
 
 export default function Layout({children}: LayoutProps) {
     return (
-        <div className="min-h-screen bg-[#0B0D0D] text-[#D2D7D9]">
+        <div className="min-h-screen text-[#D2D7D9]">
+            <Background />
             <Navbar />
             <main>
                 {children}
