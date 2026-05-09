@@ -4,6 +4,8 @@ import { useState } from "react";
 export default function Hero() {
 
     const [open,isOpen] = useState(false);
+
+    const [language,setLanguage ] = useState("en");
     return (
         <section id="home" className="min-h-screen flex items-center px-8 scroll-mt-20  ">
             <motion.div 
@@ -61,21 +63,101 @@ export default function Hero() {
                 {/* Right side */}
                 <div className="flex-1 flex justify-end pr-50">
 
-                    <div className="flex flex-col gap-6">
-                        <div>
-                            <p> Based in Croatia </p>
-                            <p className="font-thin"> English / Croatian </p>
+                    <div className="flex flex-col gap-5">
+
+                       
+                        <p> Based in Croatia </p>
+
+                        <div className="flex items-center gap-2 mt-1 text-sm">
+
+                            <motion.button
+                                onClick={() => setLanguage("en")}
+                                animate={{
+                                    opacity: language === "en" ? 1 : 0.4,
+                                    fontWeight: language === "en" ? 900 : 400,
+                                }}
+                                transition={{type:"spring" , stiffness:250, damping:25}}
+                                whileHover={{opacity:0.6, scale: 1.1 , y: -4 }}
+                                whileTap={{scale: 0.9, y: 0 }}
+                                className="relative cursor-pointer"
+                            >
+                                English
+
+                                {language === "en" &&  (
+                                    <motion.div
+                                        layoutId="languageIndicator"
+                                        className="absolute left-0 right-0 -bottom-1 h-0.5 bg-[#D2D7D9]"
+                                        transition={{
+                                            type:"spring",
+                                            stiffness: 300,
+                                            damping: 25,
+                                        }}
+                                    />
+                                )}
+                            </motion.button>
+
+                            <span> / </span>
+                            
+                            <motion.button
+                                onClick={() => setLanguage("hr")}
+                                animate={{
+                                    opacity: language === "hr" ? 1 : 0.4,
+                                    fontWeight: language === "hr" ? 900 : 400,
+                                }}
+                                transition={{type:"spring" , stiffness:250, damping:25}}
+                                whileHover={{opacity:0.6, scale: 1.1 , y: -4 }}
+                                whileTap={{scale: 0.9, y: 0 }}
+                                className="relative cursor-pointer"
+                            >
+                                Croatian
+
+                                {language === "hr" &&  (
+                                    <motion.div
+                                        layoutId="languageIndicator"
+                                        className="absolute left-0 right-0 -bottom-1 h-0.5  bg-[#D2D7D9]"
+                                        transition={{
+                                            type:"spring",
+                                            stiffness: 300,
+                                            damping: 25,
+                                        }}
+                                    />
+                                )}
+                            </motion.button>
+
                         </div>
 
-                        <div className="flex items-center gap-2">
-                            <span className=" relative flex h-3 w-3">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
-                                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"/>
-                            </span>
-                            <p> Available for work </p>
+                            
+                       
+
+                        <div className="flex items-center gap-5 mt-5">
+                            <div className="relative flex items-center justify-center">
+
+                                <motion.div
+                                    animate={{
+                                        scale: [1 , 1.6 ,1],
+                                        opacity: [0.3, 0.6 , 0.3]
+                                    }}
+                                    transition={{
+                                        duration:2,
+                                        repeat: Infinity, 
+                                        ease: "easeInOut"
+                                    }}
+
+                                    className="absolute h-4 w-4 rounded-full bg-green-400"
+                                />
+
+                                <div className="h-2.5 w-2.5 rounded-full bg-green-500 " />
+
+                            </div>
+
+                            <p className="text-sm">
+                                Available for work..
+                            </p>
+
                         </div>
 
                         <button className="font-semibold text-sm opacity-45 "> Download CV </button>
+
                     </div>
                     
                 </div>
