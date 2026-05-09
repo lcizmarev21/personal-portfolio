@@ -31,7 +31,7 @@ export default function Hero() {
                             transition={{type:"spring" , stiffness:250, damping:15}}
                             whileHover={{opacity:0.6, scale: 1.25 , y: -4 }}
                             whileTap={{scale: 0.9, y: 0 }}
-                            className="mt-10 opacity-45 font-thin"
+                            className="mt-10 opacity-45 font-thin cursor-pointer"
                             onClick={() => 
                                 isOpen((o) => !o) 
                             }
@@ -66,7 +66,7 @@ export default function Hero() {
                     <div className="flex flex-col gap-5">
 
                        
-                        <p> Based in Croatia </p>
+                        <p> Based in<span className="font-bold mx-2">Croatia</span>.</p>
 
                         <div className="flex items-center gap-2 mt-1 text-sm">
 
@@ -81,7 +81,7 @@ export default function Hero() {
                                 whileTap={{scale: 0.9, y: 0 }}
                                 className="relative cursor-pointer"
                             >
-                                English
+                                Eng
 
                                 {language === "en" &&  (
                                     <motion.div
@@ -94,6 +94,7 @@ export default function Hero() {
                                         }}
                                     />
                                 )}
+
                             </motion.button>
 
                             <span> / </span>
@@ -109,7 +110,7 @@ export default function Hero() {
                                 whileTap={{scale: 0.9, y: 0 }}
                                 className="relative cursor-pointer"
                             >
-                                Croatian
+                                Hr
 
                                 {language === "hr" &&  (
                                     <motion.div
@@ -138,25 +139,56 @@ export default function Hero() {
                                         opacity: [0.3, 0.6 , 0.3]
                                     }}
                                     transition={{
-                                        duration:2,
+                                        duration: 5,
                                         repeat: Infinity, 
                                         ease: "easeInOut"
+
                                     }}
 
                                     className="absolute h-4 w-4 rounded-full bg-green-400"
                                 />
 
-                                <div className="h-2.5 w-2.5 rounded-full bg-green-500 " />
+                                <div className="h-3 w-3 rounded-full bg-green-400 opacity-30" />
 
                             </div>
 
                             <p className="text-sm">
-                                Available for work..
+                                Available for work
                             </p>
 
                         </div>
 
-                        <button className="font-semibold text-sm opacity-45 "> Download CV </button>
+                        <motion.button
+                            initial={{
+                                opacity: 0.45,
+                                y: 0,
+                            }}
+
+                            animate={{
+                                opacity: 0.45,
+                                y: 0,
+                            }}
+
+                            whileHover={{
+                                opacity: 1,
+                                y: -2,
+                                scale: 1.03,
+                            }}
+
+                            whileTap={{
+                                scale: 0.97,
+                                y: 0,
+                            }}
+
+                            transition={{
+                                duration: 0.25,
+                                ease: "easeInOut",
+                            }}
+
+                            className="font-semibold text-sm cursor-pointer"
+                        >
+                            Download CV
+                        </motion.button>
 
                     </div>
                     
