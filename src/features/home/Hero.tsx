@@ -8,9 +8,9 @@ export default function Hero() {
         <section id="home" className="min-h-screen flex items-center px-8 scroll-mt-20  ">
             <motion.div 
                 className="w-full flex flex-row justify-between items-center gap-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1,  ease: "easeOut"}}
+                initial={{ opacity: 0, y: 20 , filter:"blur(5px)" }}
+                animate={{ opacity: 1, y: 0 ,filter:"blur(0px)" }}
+                transition={{ duration: 0.8,  ease: "easeOut"}}
             >
 
                 {/* Left side */}
@@ -18,16 +18,16 @@ export default function Hero() {
                     className="flex-1  justify-start pl-50"
                 >
                     <h1
-                        className="text-2xl font-bold leading-snug">
+                        className="text-2xl font-bold leading-snug ">
                         Hello, I'm Leon. <br /> <br />
                         Front end developer focused on building <br />
                         clean and responsive web applications.
                     </h1>
 
-                    <div>
+                    <div className="relative ">
                         <motion.button 
                             transition={{type:"spring" , stiffness:250, damping:15}}
-                            whileHover={{opacity:60, scale: 1.25 , y: -4 }}
+                            whileHover={{opacity:0.6, scale: 1.25 , y: -4 }}
                             whileTap={{scale: 0.9, y: 0 }}
                             className="mt-10 opacity-45 font-thin"
                             onClick={() => 
@@ -38,17 +38,16 @@ export default function Hero() {
                         </motion.button>
                         <AnimatePresence>
                             {open && (
-                                <motion.div id="more" className="mt-10 opacity-45 font-thin "
-                                    initial={{ opacity: 0, y:20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{opacity:0 , y:20}}
+                                <motion.div id="more" className="mt-10 opacity-45 font-thin absolute top-full "
+                                    initial={{ opacity: 0, y:20 , filter:"blur(10px)"}}
+                                    animate={{ opacity: 1, y: 0 , filter:"blur(0)"}}
+                                    exit={{opacity:0 , y:20, filter:"blur(10px)"}}
                                     transition={{ duration: 0.5 }}
                                 >
                                     <p>
                                     I've been learning frontend development by myself for the past year, focusing on modern JavaScript frameworks and responsive design principles. <br /> <br /> 
 
-                                    Currently looking for an internship or junior position where I can gain real-world experience and continue to develop my skills. I'm eager to learn and collaborate with experienced professionals in the field.
-
+                                    Currently looking for an internship or junior position where I can gain real-world experience and continue to develop my skills. I'm eager to learn and collaborate with experienced professionals in the field. 
                                     </p>
                                 </motion.div>
                             )}
