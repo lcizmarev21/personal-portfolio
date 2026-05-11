@@ -5,7 +5,7 @@ export default function Skills() {
     return (
        <motion.section
             id="skills"
-            className="min-h-screen pt-20 snap-start mt-20"
+            className="min-h-screen pt-20 mt-20"
             initial={{ opacity: 0, y: 20 , filter:"blur(5px)" }}
             whileInView={{ opacity: 1, y: 0 ,filter:"blur(0px)" }}
             transition={{ duration: 0.8,  ease: "easeOut"}}
