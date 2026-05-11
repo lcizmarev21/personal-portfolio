@@ -1,5 +1,5 @@
-import ProjectCard from "../../components/ui/ProjectCard.tsx"
-import {projects} from "../../data/projects_data.ts"
+
+import ProjectCardContainer from "../../components/ui/ProjectCardContainer.tsx";
 import {motion} from "framer-motion";
 
 export default function Projects() {
@@ -26,9 +26,7 @@ export default function Projects() {
                     <div className="h-2 bg-[#D2D7D9] blur-md opacity-25 w-full"></div>
                 </div>
 
-                <div className="mt-32 flex items-center justify-center gap-12 ">
-                    <ProjectCard project={projects[0]} />
-                </div>
+               <ProjectCardContainer />
 
             </div>
         </motion.section>

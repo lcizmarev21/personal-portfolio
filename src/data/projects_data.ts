@@ -8,9 +8,15 @@ export const projects: Project[] = [
     tags: ["React", "TypeScript", "Tailwind"],
   },
   {
-    title: "Task Manager",
-    description: "Simple task app with local storage.",
+    title: "Plantly",
+    description: "Webapp daily to do list with gamification elements and social features.",
     image: "/project2.png",
-    tags: ["React", "JavaScript"],
+    tags: ["React", "Typescript", "Supabase" , "Framer Motion" , "Tailwind" , "Vercel"],
   },
+  {
+    title: "Swaether",
+    description: "Mobile app that provides you with accurate weather forecasts and recommendations on what to wear based on the weather conditions.",
+    image: "/project3.png",
+    tags: ["React", "API"],
+  }
 ];
