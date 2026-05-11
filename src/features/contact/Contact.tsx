@@ -1,10 +1,15 @@
 import ContactButton from "../../components/ui/ContactButton.tsx";
+import {motion} from "framer-motion";
 
 export default function Contact() {
     return (
-       <section
+       <motion.section
             id="contact"
             className="min-h-screen scroll-mt-20"
+            initial={{ opacity: 0, y: 20 , filter:"blur(5px)" }}
+            whileInView={{ opacity: 1, y: 0 ,filter:"blur(0px)" }}
+            transition={{ duration: 0.8,  ease: "easeOut"}}
+            viewport={{ once: false , amount: 0.2 }}
         >
             <div className="w-full mx-auto px-24">
 
@@ -28,6 +33,6 @@ export default function Contact() {
                 
 
             </div>
-        </section>
+        </motion.section>
     );
 }

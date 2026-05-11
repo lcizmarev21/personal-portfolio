@@ -1,11 +1,17 @@
 import ProjectCard from "../../components/ui/ProjectCard.tsx"
 import {projects} from "../../data/projects_data.ts"
+import {motion} from "framer-motion";
 
 export default function Projects() {
     return (
-       <section
+       <motion.section
             id="projects"
             className="min-h-screen scroll-mt-20"
+            initial={{ opacity: 0, y: 20 , filter:"blur(5px)" }}
+            whileInView={{ opacity: 1, y: 0 ,filter:"blur(0px)" }}
+            transition={{ duration: 0.8,  ease: "easeOut"}}
+            viewport={{ once: false , amount: 0.2 }}
+
         >
             <div className="w-full mx-auto px-24">
 
@@ -25,6 +31,6 @@ export default function Projects() {
                 </div>
 
             </div>
-        </section>
+        </motion.section>
     );
 }
