@@ -13,12 +13,12 @@ export default function Navbar() {
 
     return (
         <nav className="fixed top-0 left-0 w-full flex justify-end px-8 py-4  z-50 bg-none backdrop-blur-xs">
-            <ul className="flex flex-row gap-12 text-lg relative"> 
+            <ul className="flex flex-row gap-12 text-lg relative mr-4"> 
                 {links.map((item) => (
                     <li key={item} className="relative">
                         <a
                             href={`#${item}`}
-                            className={`opacity-75 hover:opacity-100 transition-opacity duration-300 ${
+                            className={`opacity-75 hover:opacity-100 transition-opacity duration-300 text-xs ${
                                 active === item
                                 ? " font-bold opacity-100"
                                 : " font-normal opacity-60"
@@ -31,11 +31,12 @@ export default function Navbar() {
                         {active === item && (
                             <motion.div
                                 layoutId="underline"
-                                className="absolute -bottom-1 left-0 right-0 h-0.75  bg-[#D2D7D9] rounded scale-x-125 shadow-md "
+                                className="absolute -bottom-px left-0 right-0 h-px bg-[#D2D7D9] rounded scale-x-150 backdrop-blur-sm "
                                 transition={{
                                     type: "spring",
                                     stiffness: 500,
-                                    damping: 50,
+                                    damping: 25,
+                                    
                                 }}
                             />
                         )}
