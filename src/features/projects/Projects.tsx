@@ -1,29 +1,50 @@
 
 import ProjectsCard from "../../components/ui/ProjectsCard.tsx";
-import {motion} from "framer-motion";
+import {projects} from "../../data/projects_data.ts";
+import {useRef, useState} from "react";
+import {useMotionValueEvent, motion,useScroll, useTransform, } from "framer-motion";
 
 export default function Projects() {
+
+    const [current,setCurrent] = useState(0);
+
+    const ref = useRef(null);
+    const {scrollYProgress} = useScroll({
+        target:ref,
+        
+    })
+    const x = useTransform(scrollYProgress, [0,1], ["0%", "-300%"]);
+
+    useMotionValueEvent(scrollYProgress,"change", (y) => {
+        const index = Math.round(y * (projects.length-1));
+        setCurrent(index);
+    });
+    
+   
+
     return (
        <motion.section
+            ref={ref}
             id="projects"
-            className="h-screen pt-20 "
+            className="h-[300vh]"
             initial={{ opacity: 0, y: 20 , filter:"blur(5px)" }}
             whileInView={{ opacity: 1, y: 0 ,filter:"blur(0px)" }}
             transition={{ duration: 0.8,  ease: "easeOut"}}
             viewport={{ once: false , amount: 0.2 }}
 
         >
-            <div className="w-full mx-auto px-24">
+            <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-20">
 
-            
-                <h1 className="font-bold text-md text-[#D2D7D9]">
-                    Projects
-                </h1>
+                <div className="flex flex-col w-screen px-24">
+                    <h1 className="font-bold text-md text-[#D2D7D9]">
+                        Projects
+                    </h1>
 
-    
-                <div className="mt-4">
-                    <div className="h-0.5 bg-[#D2D7D9] w-full opacity-75"></div>
-                    <div className="h-2 bg-[#D2D7D9] blur-md opacity-25 w-full"></div>
+        
+                    <div className="mt-4">
+                        <div className="h-0.5 bg-[#D2D7D9] w-full opacity-75"></div>
+                        <div className="h-2 bg-[#D2D7D9] blur-md opacity-25 w-full"></div>
+                    </div>
                 </div>
 
                 <div className="mt-10 flex items-center justify-between w-full">
@@ -35,10 +56,20 @@ export default function Projects() {
                         </span>
                     </div>
 
-                    
-                    <div className="flex-1 px-6">
-                        <ProjectsCard />
-                    </div>
+                         <div className="overflow-hidden w-full px-10">
+
+                            <motion.div
+                                className="flex flex-row gap-20 px-4"
+                                style={{ x }}
+                            >
+                                {projects.map((p, index) => (
+                                    <div key={index} className="min-w-full flex justify-center">
+                                    <ProjectsCard project={p} />
+                                    </div>
+                                ))}
+                            </motion.div>
+
+                        </div>
 
                     
                     <div className="flex items-center justify-center w-16">
@@ -50,9 +81,17 @@ export default function Projects() {
                 </div>
 
                 <div className="flex flex-row gap-10 mt-10 justify-center items-center">
-                    <span className="rounded-full border border-[#D2D7D9] bg-[#D2D7D9]  px-2 py-2  cursor-pointer" />
-                    <span className="rounded-full border border-[#D2D7D9]  px-2 py-2  cursor-pointer" />
-                    <span className="rounded-full border border-[#D2D7D9]  px-2 py-2  cursor-pointer" />
+                    {projects.map((_, index) => (
+                        <span
+                            key={index}
+                            onClick={() => setCurrent(index)}
+                            className={`rounded-full border px-2 py-2 cursor-pointer ${
+                                current === index
+                                ? "bg-[#D2D7D9]"
+                                : "border-[#D2D7D9]"
+                            }`}
+                        />
+                    ))}
                 </div>
 
             </div>
