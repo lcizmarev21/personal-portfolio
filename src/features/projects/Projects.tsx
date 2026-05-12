@@ -1,5 +1,5 @@
 
-
+import ProjectsCard from "../../components/ui/ProjectsCard.tsx";
 import {motion} from "framer-motion";
 
 export default function Projects() {
@@ -16,7 +16,7 @@ export default function Projects() {
             <div className="w-full mx-auto px-24">
 
             
-                <h1 className="font-bold">
+                <h1 className="font-bold text-md text-[#D2D7D9]">
                     Projects
                 </h1>
 
@@ -26,11 +26,36 @@ export default function Projects() {
                     <div className="h-2 bg-[#D2D7D9] blur-md opacity-25 w-full"></div>
                 </div>
 
-               
+                <div className="mt-10 flex items-center justify-between w-full">
+
+                
+                    <div className="flex items-center justify-center w-16">
+                        <span className="text-[#D2D7D9]/30 text-4xl font-thin">
+                            |
+                        </span>
+                    </div>
+
+                    
+                    <div className="flex-1 px-6">
+                        <ProjectsCard />
+                    </div>
+
+                    
+                    <div className="flex items-center justify-center w-16">
+                        <span className="text-[#D2D7D9]/30 text-4xl font-thin">
+                            &gt;
+                        </span>
+                    </div>
+
+                </div>
+
+                <div className="flex flex-row gap-10 mt-10 justify-center items-center">
+                    <span className="rounded-full border border-[#D2D7D9] bg-[#D2D7D9]  px-2 py-2  cursor-pointer" />
+                    <span className="rounded-full border border-[#D2D7D9]  px-2 py-2  cursor-pointer" />
+                    <span className="rounded-full border border-[#D2D7D9]  px-2 py-2  cursor-pointer" />
+                </div>
 
             </div>
-
-            
 
         </motion.section>
     );
