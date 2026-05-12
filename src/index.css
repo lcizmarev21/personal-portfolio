@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 html {
   scroll-behavior: smooth;
 }
@@ -11,6 +12,7 @@ html {
 /* Hide scrollbar */
 * {
   scrollbar-width: none; /* Firefox */
+  user-select: none; /* Disable text selection */
 }
 
 *::-webkit-scrollbar {
