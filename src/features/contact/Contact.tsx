@@ -1,4 +1,4 @@
-import ContactButton from "../../components/ui/ContactButton.tsx";
+
 import {motion} from "framer-motion";
 
 export default function Contact() {
@@ -25,9 +25,7 @@ export default function Contact() {
                 </div>
 
                 <div className=" mt-32 flex items-center justify-center gap-12  ">
-                    <ContactButton contact={{ link: "mailto:example@example.com", icon: "/icons/gmail.svg", label: "Email" }} />
-                    <ContactButton contact={{ link: "https://linkedin.com/in/example", icon: "/icons/linkedin.svg", label: "LinkedIn" }} />
-                    <ContactButton contact={{ link: "https://github.com/example", icon: "/icons/github.svg", label: "GitHub" }} />
+                 
                 </div>
 
                 

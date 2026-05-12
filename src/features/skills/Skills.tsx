@@ -1,4 +1,4 @@
-import SkillLayout from "../../components/ui/SkillLayout.tsx";
+
 import {motion} from "framer-motion";
 
 export default function Skills() {
@@ -24,9 +24,7 @@ export default function Skills() {
                     <div className="h-2 bg-[#D2D7D9] blur-md opacity-25 w-full"></div>
                 </div>
 
-                <div className="mt-10">
-                    <SkillLayout />
-                </div>
+               
 
             </div>
         </motion.section>
