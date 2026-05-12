@@ -6,7 +6,7 @@ export default function Projects() {
     return (
        <motion.section
             id="projects"
-            className="h-[250vh] pt-20 snap-start "
+            className="h-screen pt-20 snap-start "
             initial={{ opacity: 0, y: 20 , filter:"blur(5px)" }}
             whileInView={{ opacity: 1, y: 0 ,filter:"blur(0px)" }}
             transition={{ duration: 0.8,  ease: "easeOut"}}

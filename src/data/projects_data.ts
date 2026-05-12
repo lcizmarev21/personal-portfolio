@@ -14,7 +14,7 @@ export const projects: Project[] = [
     tags: ["React", "Typescript", "Supabase" , "Framer Motion" , "Tailwind" , "Vercel"],
   },
   {
-    title: "Swaether",
+    title: "Sweather",
     description: "Mobile app that provides you with accurate weather forecasts and recommendations on what to wear based on the weather conditions.",
     image: "/project_images/cloud.jpg",
     tags: ["React", "API"],
