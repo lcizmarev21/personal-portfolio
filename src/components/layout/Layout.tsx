@@ -7,7 +7,7 @@ interface LayoutProps {
 
 export default function Layout({children}: LayoutProps) {
     return (
-        <div className="min-h-screen text-[#D2D7D9] h-screen snap-y snap-mandatory overflow-y-scroll ">
+        <div className="min-h-screen text-[#D2D7D9] h-screen  ">
             <Background />
             <Navbar />
             <main >

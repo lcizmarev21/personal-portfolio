@@ -7,7 +7,7 @@ export default function Hero() {
 
     const [language,setLanguage ] = useState("en");
     return (
-        <section id="home" className="min-h-screen flex items-center px-8 snap-start"> 
+        <section id="home" className="min-h-screen flex items-center px-8 "> 
             <motion.div 
                 className="w-full flex flex-row justify-between items-center gap-6"
                 initial={{ opacity: 0, y: 20 , filter:"blur(5px)" }}
