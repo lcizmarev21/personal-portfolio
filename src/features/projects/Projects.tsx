@@ -8,7 +8,7 @@ export default function Projects() {
 
     const [current,setCurrent] = useState(0);
 
-    const ref = useRef(null);
+    const ref = useRef<HTMLDivElement | null>(null);
     const {scrollYProgress} = useScroll({
         target:ref,
         
@@ -63,7 +63,7 @@ export default function Projects() {
                                 style={{ x }}
                             >
                                 {projects.map((p, index) => (
-                                    <div key={index} className="min-w-full flex justify-center">
+                                    <div key={index} className="min-w-full flex justify-center" id={`project-${index}`}>
                                     <ProjectsCard project={p} />
                                     </div>
                                 ))}
@@ -83,16 +83,15 @@ export default function Projects() {
                 <div className="flex flex-row gap-10 mt-10 justify-center items-center">
                     {projects.map((_, index) => (
                         <span
-                            key={index}
-                            onClick={() => setCurrent(index)}
-                            className={`rounded-full border px-2 py-2 cursor-pointer ${
-                                current === index
-                                ? "bg-[#D2D7D9]"
-                                : "border-[#D2D7D9]"
-                            }`}
+                        key={index}
+                        className={`rounded-full border px-2 py-2 cursor-pointer ${
+                            current === index
+                            ? "bg-[#D2D7D9]"
+                            : "border-[#D2D7D9]"
+                        }`}
                         />
                     ))}
-                </div>
+                    </div>
 
             </div>
 
