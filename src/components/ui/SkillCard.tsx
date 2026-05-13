@@ -21,7 +21,7 @@ export default function SkillCard({
         animate={{scale: active ? 1.02 : 1}}
         
         className={`border-b px-24 py-8 transition-all duration-300 flex flex-col mx-20 items-center ${
-            active ? "bg-white text-black py-25" : "bg-transparent text-[#D2D7D9] py-6"
+            active ? "bg-[#D2D7D9] text-[#0B0D0D] py-25" : "bg-transparent text-[#D2D7D9] py-6"
         }`}
     >
         <h2 className="text-2xl font-semibold pb-10">
