@@ -23,7 +23,7 @@ export default function Skills() {
     useMotionValueEvent(scrollYProgress, "change", (v) => {
         const index = Math.min(
             skillSections.length - 1,
-            Math.floor(v * skillSections.length)
+            Math.floor(v * skillSections.length )
         );
 
         setActive(index);
@@ -33,7 +33,7 @@ export default function Skills() {
        <motion.section
             ref={ref}
             id="skills"
-            className="min-h-screen h-[360vh] "
+            className="min-h-screen h-[350vh] "
             initial={{ opacity: 0, y: 20 , filter:"blur(5px)" }}
             whileInView={{ opacity: 1, y: 0 ,filter:"blur(0px)" }}
             transition={{ duration: 0.8,  ease: "easeOut"}}
@@ -56,7 +56,9 @@ export default function Skills() {
                 </div>
 
 
-                <div className="flex flex-col w-full px-24 mt-20 gap-6">
+                <motion.div 
+                    layout
+                    className="flex flex-col w-full px-24 mt-20 gap-6">
                    {skillSections.map((section, index) => (
                         <SkillCard
                         key={section.title}
@@ -65,7 +67,7 @@ export default function Skills() {
                         active={active === index}
                         />
                     ))}
-                </div>
+                </motion.div>
 
 
 
