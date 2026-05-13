@@ -5,14 +5,14 @@ export default function Contact() {
     return (
        <motion.section
             id="contact"
-            className="min-h-screen   pt-20 "
+            className="min-h-[90vh] pt-20  "
             initial={{ opacity: 0, y: 20 , filter:"blur(5px)" }}
             whileInView={{ opacity: 1, y: 0 ,filter:"blur(0px)" }}
             transition={{ duration: 0.8,  ease: "easeOut"}}
             viewport={{ once: false , amount: 0.2 }}
         >
             <div>
-                <div className="w-screen flex flex-col px-24">
+                <div className="w-screen flex flex-col px-24 ">
 
                     <h1 className="font-bold">
                         Contact
