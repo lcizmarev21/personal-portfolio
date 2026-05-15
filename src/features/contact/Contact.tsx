@@ -38,26 +38,31 @@ export default function Contact() {
                         <div className="mt-20 flex flex-col">
 
                              <form
-                                className="flex flex-col gap-4"
+                                className="flex flex-col gap-4 items-start justify-center"
                             >
                                 <input
+                                    className="bg-[#D2D7D9] w-70 text-[#0B0D0D] placeholder-[#0B0D0D] font-light rounded-full px-10 py-2 "
                                     type="text"
                                     name="name"
-                                    placeholder="Your name"
+                                    placeholder="Name"
                                 />
 
                                 <input
+                                    className="bg-[#D2D7D9] w-70 text-[#0B0D0D] placeholder-[#0B0D0D] font-light rounded-full px-10 py-2 "
                                     type="email"
                                     name="email"
-                                    placeholder="Your email"
+                                    placeholder="Email"
                                 />
 
                                 <textarea
+                                    className="bg-[#D2D7D9] w-170 text-[#0B0D0D] placeholder-[#0B0D0D] font-light rounded-2xl px-10  py-2 h-70 overflow-y-auto resize-none"
                                     name="message"
                                     placeholder="Message"
                                 />
 
-                                <button type="submit">
+                                <button 
+                                    type="submit"
+                                    className="border border-[#D2D7D9] text-[#D2D7D9] py-2 px-4 w-40 rounded-full ml-65 hover:bg-[#D2D7D9] hover:text-[#0B0D0D]">
                                     Send
                                 </button>
                             </form>
@@ -67,30 +72,39 @@ export default function Contact() {
 
                     </div>
 
+                    <div className="flex flex-col items-center justify-center mr-40">
 
-                    <div className="grid grid-cols-1 grid-rows-3 gap-4">
-                        <a
-                            href="https://github.com/yourname"
-                            target="_blank"
-                            className="px-6 py-4 border border-white/20 rounded-2xl text-[#D2D7D9] hover:bg-white hover:text-black transition"
-                        >
-                            GitHub
-                        </a>
+                        <div className="flex-row flex mb-10 gap-10 ">
+                                <img src="icons/github.svg" className="w-5 h-5" />
+                                <span> :</span>
+                                <span> phone number </span>
+                        </div>
 
-                        <a
-                            href="https://linkedin.com/in/yourname"
-                            target="_blank"
-                            className="px-6 py-4 border border-white/20 rounded-2xl text-[#D2D7D9] hover:bg-white hover:text-black transition"
-                        >
-                            LinkedIn
-                        </a>
 
-                        <a
-                            href="mailto:youremail@gmail.com"
-                            className="px-6 py-4 border border-white/20 rounded-2xl text-[#D2D7D9] hover:bg-white hover:text-black transition"
-                        >
-                            Email
-                        </a>
+                        <div className="grid grid-cols-1 grid-rows-3 gap-4   ">
+                            <a
+                                href="https://github.com/yourname" 
+                                target="_blank"
+                                className="px-6 py-4 border border-white/20 rounded-2xl text-[#D2D7D9] hover:bg-white hover:text-black transition w-fit"
+                            >
+                                <img src="/icons/github.svg" className="w-10 h-10" />
+                            </a>
+
+                            <a
+                                href="https://linkedin.com/in/yourname"
+                                target="_blank"
+                                className="px-6 py-4 border border-white/20 rounded-2xl text-[#D2D7D9] hover:bg-white hover:text-black transition w-fit "
+                            >
+                                <img src="/icons/linkedin.svg" className="w-10 h-10 " />
+                            </a>
+
+                            <a
+                                href="mailto:youremail@gmail.com"
+                                className="px-6 py-4 border border-white/20 rounded-2xl text-[#D2D7D9] hover:bg-white hover:text-black transition w-fit"
+                            >
+                                <img  src="/icons/gmail.svg" className="w-10 h-10 " />
+                            </a>
+                        </div>
                     </div>
 
 
