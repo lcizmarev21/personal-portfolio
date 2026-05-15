@@ -1,10 +1,6 @@
 @import "tailwindcss";
 
 
-html {
-  scroll-behavior: smooth;
-}
-
 .page {
   position: relative;
 }
