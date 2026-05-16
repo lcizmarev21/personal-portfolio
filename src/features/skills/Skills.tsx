@@ -58,7 +58,7 @@ export default function Skills() {
 
                 <motion.div 
                     layout
-                    className="flex flex-col w-full px-24 mt-20 gap-6">
+                    className="flex flex-col w-full justify-center  px-24 mt-20 gap-6">
                    {skillSections.map((section, index) => (
                         <SkillCard
                         key={section.title}

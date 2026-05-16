@@ -26,7 +26,7 @@ export default function SkillCard({
             {title}
         </h2>
 
-        <AnimatePresence>
+        <AnimatePresence >
             {active && (
                 <motion.div 
                     className="flex flex-wrap gap-3 mt-6"
@@ -35,7 +35,7 @@ export default function SkillCard({
                     exit={{opacity:0, y:-10}}
                     transition={{duration:0.2}}
                 >
-                    {skills.map((skill) => (
+                    {skills.map((skill) => ( 
                         <SkillPill
                             key={skill.name}
                             skill={skill}
