@@ -13,27 +13,43 @@ export default function SkillCard({
     skills,
     active
 }: Props) {
+
+
     return (
 
     <motion.div
         layout
-        transition={{layout:{duration: 0.5, ease:"easeInOut"}, scale:{ ease:"easeOut"}}}
-        animate={{backgroundColor: active ? "#D2D7D9" : "#0B0D0D" , color: active ? "#0B0D0D" : "#D2D7D9" , paddingTop: active ? 100 : 24 , paddingBottom: active ? 100 : 24  }}
-        
-        className="border-b px-24 py-8 flex flex-col mx-20 items-center"
+        animate={{
+            backgroundColor: active ? "#D2D7D9" : "#0B0D0D",
+            color: active ? "#0B0D0D" : "#D2D7D9",
+            paddingTop: active ? 100 : 24,
+            paddingBottom: active ? 100 : 24,
+        }}
+        transition={{
+            layout: {type:"spring" , damping: 15 , stiffness: 100 },
+            backgroundColor: { duration: 0.3},
+            color: { duration: 0.3 },
+            paddingTop: {duration: 1},
+            paddingBottom: {duration: 1}
+        }}
+        className="border-b px-24 py-8 flex flex-col mx-20 items-center overflow-hidden "
     >
-        <h2 className="text-2xl font-semibold pb-10">
+        <motion.h2 
+            animate={{ x: active ? -250 : 0, opacity: 1 }}
+            transition={{ type:"spring", stiffness: 120, damping: 20}}
+            className="text-2xl font-semibold pb-10"
+        >
             {title}
-        </h2>
+        </motion.h2>
 
         <AnimatePresence >
             {active && (
                 <motion.div 
                     className="flex flex-wrap gap-3 mt-6"
-                    initial={{opacity:0, y:-10 }}
-                    animate={{opacity:1 , y: 0 }}
-                    exit={{opacity:0, y:-10}}
-                    transition={{duration:0.2}}
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{ opacity: 0}}
+                    transition={{duration: 1 , ease:"easeOut"}}
                 >
                     {skills.map((skill) => ( 
                         <SkillPill
