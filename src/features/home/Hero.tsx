@@ -10,9 +10,9 @@ export default function Hero() {
         <section id="home" className="min-h-screen flex items-center px-8 "> 
             <motion.div 
                 className="w-full flex flex-row justify-between items-center gap-6"
-                initial={{ opacity: 0, y: 20 , filter:"blur(5px)" }}
+                initial={{ opacity: 0, y: 40 , filter:"blur(10px)" }}
                 animate={{ opacity: 1, y: 0 ,filter:"blur(0px)" }}
-                transition={{ duration: 0.8,  ease: "easeOut"}}
+                transition={{ duration: 1,  ease: "easeInOut"}}
             >
 
                 {/* Left side */}

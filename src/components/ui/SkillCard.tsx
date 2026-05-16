@@ -17,12 +17,10 @@ export default function SkillCard({
 
     <motion.div
         layout
-        transition={{layout:{duration: 0.5, ease:"easeInOut"}, scale:{ duration:0.1, ease:"easeOut"}}}
-        animate={{scale: active ? 1.02 : 1}}
+        transition={{layout:{duration: 0.5, ease:"easeInOut"}, scale:{ ease:"easeOut"}}}
+        animate={{backgroundColor: active ? "#D2D7D9" : "#0B0D0D" , color: active ? "#0B0D0D" : "#D2D7D9" , paddingTop: active ? 100 : 24 , paddingBottom: active ? 100 : 24  }}
         
-        className={`border-b px-24 py-8 transition-all duration-300 flex flex-col mx-20 items-center ${
-            active ? "bg-[#D2D7D9] text-[#0B0D0D] py-25" : "bg-transparent text-[#D2D7D9] py-6"
-        }`}
+        className="border-b px-24 py-8 flex flex-col mx-20 items-center"
     >
         <h2 className="text-2xl font-semibold pb-10">
             {title}
@@ -35,7 +33,7 @@ export default function SkillCard({
                     initial={{opacity:0, y:-10 }}
                     animate={{opacity:1 , y: 0 }}
                     exit={{opacity:0, y:-10}}
-                    transition={{duration:0.1}}
+                    transition={{duration:0.2}}
                 >
                     {skills.map((skill) => (
                         <SkillPill

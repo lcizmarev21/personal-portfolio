@@ -6,9 +6,9 @@ export default function Contact() {
        <motion.section
             id="contact"
             className="min-h-[90vh] pt-20  "
-            initial={{ opacity: 0, y: 20 , filter:"blur(5px)" }}
+            initial={{ opacity: 0, y: 40 , filter:"blur(10px)" }}
             whileInView={{ opacity: 1, y: 0 ,filter:"blur(0px)" }}
-            transition={{ duration: 0.8,  ease: "easeOut"}}
+            transition={{ duration: 1,  ease: "easeInOut"}}
             viewport={{ once: false , amount: 0.2 }}
         >
             <div>

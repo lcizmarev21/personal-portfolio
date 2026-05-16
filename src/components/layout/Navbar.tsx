@@ -1,7 +1,6 @@
 
-
 import {motion} from "framer-motion";
-import {useActiveSection} from "../../animations/hooks/useActiveSection";
+import { useActiveSection } from "../../utils/useActiveSection";
 
 const links = ["home", "projects", "skills", "contact"];
 

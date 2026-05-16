@@ -2,7 +2,7 @@
 import ProjectsCard from "../../components/ui/ProjectsCard.tsx";
 import {projects} from "../../data/projects_data.ts";
 import {useRef, useState} from "react";
-import {useMotionValueEvent, motion,useScroll, useTransform, } from "framer-motion";
+import {useMotionValueEvent, motion,useScroll, useTransform,  } from "framer-motion";
 
 export default function Projects() {
 
@@ -13,7 +13,7 @@ export default function Projects() {
         target:ref,
         
     })
-    const x = useTransform(scrollYProgress, [0,1], ["0%", "-300%"]);
+    const x = useTransform(scrollYProgress, [0,1], ["0%", "-200%"]);
 
     useMotionValueEvent(scrollYProgress,"change", (y) => {
         const index = Math.round(y * (projects.length-1));
@@ -27,9 +27,9 @@ export default function Projects() {
             ref={ref}
             id="projects"
             className="h-[300vh]"
-            initial={{ opacity: 0, y: 20 , filter:"blur(5px)" }}
+            initial={{ opacity: 0, y: 40 , filter:"blur(10px)" }}
             whileInView={{ opacity: 1, y: 0 ,filter:"blur(0px)" }}
-            transition={{ duration: 0.8,  ease: "easeOut"}}
+            transition={{ duration: 1,  ease: "easeInOut"}}
             viewport={{ once: false , amount: 0.2 }}
 
         >
@@ -63,9 +63,15 @@ export default function Projects() {
                                 style={{ x }}
                             >
                                 {projects.map((p, index) => (
-                                    <div key={index} className="min-w-full flex justify-center" id={`project-${index}`}>
-                                    <ProjectsCard project={p} />
-                                    </div>
+                                    <motion.div 
+                                        key={index} 
+                                        className="min-w-full flex justify-center" 
+                                        id={`project-${index}`}
+                                        animate={{ scale: current === index? 1 : 0.9, opacity: current === index ? 1 : 0.35, filter: current === index ? "blur(0px)" : "blur(5px)"}}
+                                        transition={{ duration: 0.5 , ease:"easeInOut"}}
+                                    >
+                                        <ProjectsCard project={p} />
+                                    </motion.div>
                                 ))}
                             </motion.div>
 
