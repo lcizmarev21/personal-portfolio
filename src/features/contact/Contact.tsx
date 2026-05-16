@@ -41,28 +41,28 @@ export default function Contact() {
                                 className="flex flex-col gap-4 items-start justify-center"
                             >
                                 <input
-                                    className="bg-[#D2D7D9] w-70 text-[#0B0D0D] placeholder-[#0B0D0D] font-light rounded-full px-10 py-2 "
+                                    className="bg-transparent w-70 text-[#D2D7D9] placeholder-[#D2D7D9] font-light rounded-full px-10 py-3 border border-[#D2D7D9]"
                                     type="text"
                                     name="name"
                                     placeholder="Name"
                                 />
 
                                 <input
-                                    className="bg-[#D2D7D9] w-70 text-[#0B0D0D] placeholder-[#0B0D0D] font-light rounded-full px-10 py-2 "
+                                    className="bg-transparent w-70 text-[#D2D7D9] placeholder-[#D2D7D9] font-light rounded-full px-10 py-3 border border-[#D2D7D9]"
                                     type="email"
                                     name="email"
                                     placeholder="Email"
                                 />
 
                                 <textarea
-                                    className="bg-[#D2D7D9] w-170 text-[#0B0D0D] placeholder-[#0B0D0D] font-light rounded-2xl px-10  py-2 h-70 overflow-y-auto resize-none"
+                                    className="bg-transparent text-[#D2D7D9] placeholder-[#D2D7D9] font-light rounded-2xl px-10  py-6 h-70 w-170  overflow-y-auto resize-none border border-[#D2D7D9] "
                                     name="message"
                                     placeholder="Message"
                                 />
 
                                 <button 
                                     type="submit"
-                                    className="border border-[#D2D7D9] text-[#D2D7D9] py-2 px-4 w-40 rounded-full ml-65 hover:bg-[#D2D7D9] hover:text-[#0B0D0D]">
+                                    className="border border-[#D2D7D9] text-[#0B0D0D] bg-[#D2D7D9] py-2 px-4 w-40 rounded-full ml-65 hover:bg-[#0B0D0D] hover:text-[#D2D7D9]">
                                     Send
                                 </button>
                             </form>

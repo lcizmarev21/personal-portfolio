@@ -13,7 +13,7 @@ export default function Projects() {
         target:ref,
         
     })
-    const x = useTransform(scrollYProgress, [0,1], ["0%", "-200%"]);
+    const x = useTransform(scrollYProgress, [0,1], ["0%", "-205%"]);
 
     useMotionValueEvent(scrollYProgress,"change", (y) => {
         const index = Math.round(y * (projects.length-1));
