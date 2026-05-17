@@ -1,6 +1,7 @@
 
 import {motion} from "framer-motion";
 import Form from "../../components/ui/Form";
+import ContactButtons from "../../components/ui/ContactButtons";
 
 export default function Contact() {
 
@@ -76,37 +77,15 @@ export default function Contact() {
 
                     <div className="flex flex-col items-center justify-center mr-40">
 
-                        <div className="flex-row flex mb-10 gap-10 ">
+                        <div className="flex-row flex mb-20 gap-10 ">
                                 <img src="icons/github.svg" className="w-5 h-5" />
-                                <span> :</span>
-                                <span> phone number </span>
+                                <span className="font-bold"> : </span>
+                                <span className="font-bold text-l"> +385 199 9310 123 </span>
                         </div>
 
 
-                        <div className="grid grid-cols-1 grid-rows-3 gap-4   ">
-                            <a
-                                href="https://github.com/yourname" 
-                                target="_blank"
-                                className="px-6 py-4 border border-white/20 rounded-2xl text-[#D2D7D9] hover:bg-white hover:text-black transition w-fit"
-                            >
-                                <img src="/icons/github.svg" className="w-10 h-10" />
-                            </a>
+                        <ContactButtons />
 
-                            <a
-                                href="https://linkedin.com/in/yourname"
-                                target="_blank"
-                                className="px-6 py-4 border border-white/20 rounded-2xl text-[#D2D7D9] hover:bg-white hover:text-black transition w-fit "
-                            >
-                                <img src="/icons/linkedin.svg" className="w-10 h-10 " />
-                            </a>
-
-                            <a
-                                href="mailto:youremail@gmail.com"
-                                className="px-6 py-4 border border-white/20 rounded-2xl text-[#D2D7D9] hover:bg-white hover:text-black transition w-fit"
-                            >
-                                <img  src="/icons/gmail.svg" className="w-10 h-10 " />
-                            </a>
-                        </div>
                     </div>
 
 
