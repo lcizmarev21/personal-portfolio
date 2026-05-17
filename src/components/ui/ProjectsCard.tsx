@@ -22,14 +22,18 @@ export default function ProjectsCard({ project }: { project: Project }) {
                     {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-2 mt-4 justify-start items-center">
                     {project.tags.map((tag) => (
-                        <span
+
+                        <div 
                             key={tag}
-                            className="px-4 py-2 text-[#D2D7D9] rounded-full border border-[#D2D7D9] text-xs font-thin"
-                        >
-                            {tag}
-                        </span>
+                            className="flex flex-col items-center justify-center px-4 py-2 rounded-full border-2 border-[#D2D7D9]/70 w-40 ">
+                            <span
+                                className="text-[#D2D7D9] text-xs font-light "
+                            >
+                                {tag}
+                            </span>
+                        </div>
                     ))}
                 </div>
                     
