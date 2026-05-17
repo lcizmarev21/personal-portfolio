@@ -15,30 +15,3 @@
   display: none; /* Chrome, Safari, Edge */
 }
 
-/* background */ 
-@keyframes float {
-  0%,100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-40px);
-  }
-}
-
-@keyframes floatSlow {
-  0%,100% {
-    transform: translateX(0px);
-  }
-  50% {
-    transform: translateX(30px);
-  }
-}
-
-.animate-float {
-  animation: float 10s ease-in-out infinite;
-}
-
-.animate-float-slow {
-  animation: floatSlow 16s ease-in-out infinite;
-}
-

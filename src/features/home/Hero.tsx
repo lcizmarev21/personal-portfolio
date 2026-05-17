@@ -22,8 +22,8 @@ export default function Hero() {
                     <h1
                         className="text-2xl font-semibold leading-snug ">
                         Hello, I'm Leon. <br /> <br />
-                       <span className="font-bold text-3xl px-10"> Frontend developer </span> <br/> 
-                        focused on building clean and responsive web applications.
+                        <span className="font-bold text-3xl px-10"> Frontend developer </span> 
+                        <br /> focused on building clean and responsive web applications.
                     </h1>
 
                     <div className="relative ">
