@@ -2,6 +2,8 @@
 import {motion} from "framer-motion";
 
 export default function Contact() {
+
+    const text = "Let's build something together!";
     return (
        <motion.section
             id="contact"
@@ -30,9 +32,34 @@ export default function Contact() {
                     <div className="flex-col flex items-center justify-center">
 
                         <h2 
-                            className="text-2xl font-semibold"
+                            className="text-2xl font-semibold leading-tight flex flex-wrap gap-x-1"
                         >
-                            Let's build something together!
+                            {text.split(" ").map((word, index) => (
+                                    <motion.span
+                                        key={index}
+                                        className="
+                                            mr-4 inline-block
+                                            text-transparent
+                                            bg-clip-text
+                                            bg-size-[200%_100%]
+                                            bg-[linear-gradient(110deg,#666_35%,#fff_50%,#666_65%)]
+                                        "
+                                        animate={{  
+                                            backgroundPosition: [
+                                                "200% , 0%",
+                                                "-200%, 0%"
+                                            ]
+                                        }}
+                                        transition={{
+                                            duration: 6,
+                                            ease: "linear",
+                                            repeat:Infinity,
+                                            repeatType:"loop"
+                                        }}
+                                        >
+                                        {word}
+                                    </motion.span>
+                            ))}
                         </h2>
 
                         <div className="mt-20 flex flex-col">
@@ -41,21 +68,21 @@ export default function Contact() {
                                 className="flex flex-col gap-4 items-start justify-center"
                             >
                                 <input
-                                    className="bg-transparent w-70 text-[#D2D7D9] placeholder-[#D2D7D9] font-light rounded-full px-10 py-3 border border-[#D2D7D9]"
+                                    className="bg-transparent w-70 text-[#D2D7D9] placeholder-[#D2D7D9] font-light rounded-full px-10 py-3 border border-[#D2D7D9]/50"
                                     type="text"
                                     name="name"
                                     placeholder="Name"
                                 />
 
                                 <input
-                                    className="bg-transparent w-70 text-[#D2D7D9] placeholder-[#D2D7D9] font-light rounded-full px-10 py-3 border border-[#D2D7D9]"
+                                    className="bg-transparent w-70 text-[#D2D7D9] placeholder-[#D2D7D9] font-light rounded-full px-10 py-3 border border-[#D2D7D9]/50"
                                     type="email"
                                     name="email"
                                     placeholder="Email"
                                 />
 
                                 <textarea
-                                    className="bg-transparent text-[#D2D7D9] placeholder-[#D2D7D9] font-light rounded-2xl px-10  py-6 h-70 w-170  overflow-y-auto resize-none border border-[#D2D7D9] "
+                                    className="bg-transparent text-[#D2D7D9] placeholder-[#D2D7D9] font-light rounded-2xl px-10  py-6 h-70 w-170  overflow-y-auto resize-none border border-[#D2D7D9]/50 "
                                     name="message"
                                     placeholder="Message"
                                 />
@@ -63,7 +90,7 @@ export default function Contact() {
                                 <button 
                                     type="submit"
                                     className="border border-[#D2D7D9] text-[#0B0D0D] bg-[#D2D7D9] py-2 px-4 w-40 rounded-full ml-65 hover:bg-[#0B0D0D] hover:text-[#D2D7D9]">
-                                    Send
+                                        Send
                                 </button>
                             </form>
 
