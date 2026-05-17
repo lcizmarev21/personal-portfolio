@@ -20,10 +20,10 @@ export default function Hero() {
                     className="flex-1  justify-start pl-50"
                 >
                     <h1
-                        className="text-2xl font-bold leading-snug ">
+                        className="text-2xl font-semibold leading-snug ">
                         Hello, I'm Leon. <br /> <br />
-                        Front end developer focused on building <br />
-                        clean and responsive web applications.
+                       <span className="font-bold text-3xl px-10"> Frontend developer </span> <br/> 
+                        focused on building clean and responsive web applications.
                     </h1>
 
                     <div className="relative ">
