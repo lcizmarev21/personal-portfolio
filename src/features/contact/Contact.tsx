@@ -1,5 +1,6 @@
 
 import {motion} from "framer-motion";
+import Form from "../../components/ui/Form";
 
 export default function Contact() {
 
@@ -62,38 +63,12 @@ export default function Contact() {
                             ))}
                         </h2>
 
-                        <div className="mt-20 flex flex-col">
-
-                             <form
-                                className="flex flex-col gap-4 items-start justify-center"
-                            >
-                                <input
-                                    className="bg-transparent w-70 text-[#D2D7D9] placeholder-[#D2D7D9] font-light rounded-full px-10 py-3 border border-[#D2D7D9]/50"
-                                    type="text"
-                                    name="name"
-                                    placeholder="Name"
-                                />
-
-                                <input
-                                    className="bg-transparent w-70 text-[#D2D7D9] placeholder-[#D2D7D9] font-light rounded-full px-10 py-3 border border-[#D2D7D9]/50"
-                                    type="email"
-                                    name="email"
-                                    placeholder="Email"
-                                />
-
-                                <textarea
-                                    className="bg-transparent text-[#D2D7D9] placeholder-[#D2D7D9] font-light rounded-2xl px-10  py-6 h-70 w-170  overflow-y-auto resize-none border border-[#D2D7D9]/50 "
-                                    name="message"
-                                    placeholder="Message"
-                                />
-
-                                <button 
-                                    type="submit"
-                                    className="border border-[#D2D7D9] text-[#0B0D0D] bg-[#D2D7D9] py-2 px-4 w-40 rounded-full ml-65 hover:bg-[#0B0D0D] hover:text-[#D2D7D9]">
-                                        Send
-                                </button>
-                            </form>
-
+                        <div 
+                            className="mt-20 flex flex-col"
+                        >
+                            
+                            <Form />
+                        
                         </div>
 
 
