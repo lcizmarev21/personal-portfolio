@@ -24,6 +24,7 @@ export default function SkillCard({
             color: active ? "#0B0D0D" : "#D2D7D9",
             paddingTop: active ? 100 : 24,
             paddingBottom: active ? 100 : 24,
+            height: active ? 300 : 150
         }}
         transition={{
             layout: {type:"spring" , damping: 15 , stiffness: 100 },
@@ -32,7 +33,7 @@ export default function SkillCard({
             paddingTop: {duration: 1},
             paddingBottom: {duration: 1}
         }}
-        className="border-b px-24 py-8 flex flex-col mx-20 items-center overflow-hidden "
+        className="border-b px-24 py-8 flex flex-col mx-20 items-center  overflow-hidden min-h-35 "
     >
         <motion.h2 
             animate={{ x: active ? -250 : 0, opacity: 1 }}
